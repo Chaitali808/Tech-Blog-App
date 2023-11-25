@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Daily Journal</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/contact.css" />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle"
+            data-toggle="collapse"
+            data-target="#myNavbar"
+          >
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">AKATSUKI Nodevember</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li id="signup"><a href="/signup">Sign Up</a></li>
+            <li id="login"><a href="/login">Login</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container-inner">
+      <h1 class="title">Login</h1>
+      <div class="contact-card">
+        <form class="contact-form" action="/login" method="post">
+          <div class="form-group">
+            <label for="email">Your Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="johndoe@gmail.com"
+              class="form-control"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="name">Your Password:</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="*********"
+              class="form-control"
+              required
+            />
+          </div>
+
+          <button type="submit" class="btn btn-red">Login</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer">
+      <p>Made with 🤍 by Akatsuki</p>
+    </div>
+  </body>
+</html>
