@@ -8,11 +8,9 @@ app.set('view engine', 'ejs');
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const mongodbURL = process.env.MONGO_URL;
+const MONGO_URL = process.env.MONGO_URL;
 
-// const MONGO_URL = "mongodb+srv://chaitalibhavsar:Chaitali123@node.kwshqpy.mongodb.net/";
-
-mongoose.connect(MONGO_URL)
+mongoose.connect(MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
         console.log("DB Connected Successfully!");
     })
@@ -69,7 +67,7 @@ app.post("/compose", (req, res) => {
         })
         .catch((err) => {
             console.log("Error posting New Blog", err);
-            res.render("error");
+            res.render("error", { errorMessage: err.message });
         });
 });
 
@@ -86,12 +84,11 @@ app.get("/post/:id", (req, res) => {
         })
         .catch(err => {
             console.log("Error finding blog post", err);
-            res.render("error");
+            res.render("error", { errorMessage: err.message });
         });
 });
 
-
-const port = 3000 || process.env.PORT;
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
-    console.log("Server is listening on port 3000");
+    console.log("Server is listening on port " + port);
 });
